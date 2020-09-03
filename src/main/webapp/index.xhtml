@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Preço do Alcool:" for="alcool"/>
+			<h:inputText value="#{combustivelBean.combustivel.alcool}" 
+				id="alcool" label="Preço do alcool"/>
+			<h:outputLabel value="Preço da Gasolina:" for="gasolina"/>
+			<h:inputText value="#{combustivelBean.combustivel.gasolina}" 
+			id="gasolina" label="Preço da gasolina"/>
+		</h:panelGrid>
+		<h:commandButton value="Com qual abastecer" action="#{combustivelBean.melhorCombustivel}"/>
+		<h:outputText value="Abasteça com #{combustivelBean.melhor}" rendered="#{! empty(combustivelBean.melhor)}"/>
+		<h:messages/>		
+	</h:form>
+</h:body>
+</html>
